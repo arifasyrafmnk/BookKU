@@ -1,0 +1,42 @@
+ <div class="container">
+     <div class="row">
+    <form class="col s12">
+      <div class="row">
+        <div class="input-field col s12">
+          <i class="material-icons prefix">search</i>
+          <input id="icon_prefix" type="text" class="validate" ng-model="galleryCtrl.search" ng-change="galleryCtrl.searchBook(galleryCtrl.search)">
+          <select ng-options="i for i in publisher" ng-change="galleryCtrl.searchBookByPublisher(galleryCtrl.selected)"
+                        ng-model="galleryCtrl.selected">
+          </select>
+          <label for="icon_prefix">Search</label>
+
+        </div>
+      </div>
+    </form>
+  </div>
+<div class="row">
+    
+    <div ng-repeat="book in galleryCtrl.awesomeBooks">
+        <div class="card col s3" style="height:300px">
+        
+            <div class="card-image waves-effect waves-block waves-light">
+                <img class="activator" src={{book.Image}} height="200px" width="120px">
+            </div>
+            <div class="card-content">
+                <span class="activator grey-text text-darken-4">{{book.Title}}</span><br/>
+                <a href={{book.Link}} target="blank"><button class="btn waves-effect waves-light red right" type="submit" name="action" ng-click="">{{book.Price}}
+                    <i class="material-icons right">send</i>
+                </button></a>
+            </div>
+            <div class="card-reveal">
+                <span class="card-title grey-text text-darken-4">{{book.Title}}<i class="material-icons right">close</i></span>
+                <p>{{book.Source}}</p>
+            </div>
+        
+        </div>
+    </div>
+    
+</div>
+
+
+ </div>
